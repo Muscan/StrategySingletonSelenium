@@ -29,7 +29,8 @@ public class CheckoutPage {
     @FindBy(id = "cgv")
     private WebElement confirmShippingCheckBox;
 
-    @FindBy(css = "#form > p > button > span")
+    @FindBy(css = "button.button:nth-child(4)")
+   // button.button:nth-child(4)
     private WebElement checkoutButtonConfirmShipping;
 
     @FindBy(css = "#HOOK_PAYMENT > div:nth-child(1) > div > p > a")
@@ -40,6 +41,9 @@ public class CheckoutPage {
 
     @FindBy(css = "#center_column > div > p > strong")
     private WebElement orderConfirmationMessage;
+
+    @FindBy(id = "summary_products_quantity")
+    private WebElement summaryProducts;
 
     public Boolean checkTitle(String title){
         return pageTitle.getText().equals(title);
@@ -82,4 +86,7 @@ public class CheckoutPage {
         return orderConfirmationMessage.getText().contains(Constants.COMPLETE_ORDER);
     }
 
+    public String getSummaryProductsString(){
+        return summaryProducts.getText();
+    }
 }

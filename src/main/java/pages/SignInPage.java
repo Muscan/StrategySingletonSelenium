@@ -31,7 +31,7 @@ public class SignInPage {
     private WebElement signUpButton;
 
     public void logIn(String email, String passwd){
-        emailField.sendKeys(Utils.decode64(email));
+        emailField.sendKeys(email);
         password.sendKeys(Utils.decode64(passwd));
         signInButton.click();
     }
