@@ -6,8 +6,8 @@ public class Constants {
     public static final String CHROME = "Chrome";
     public static final String FIREFOX = "Firefox";
     public static final String PHANTOMJS = "PhantomJs";
-    public static final int TIMEOUT = 20;
-    public static final String CART_QUANTITY = "1 Product";
+    public static final int TIMEOUT = 15;
+    public static final String CART_QUANTITY = "2 Products";
     public static final String COMPLETE_ORDER = "Your order on My Store is complete.";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
@@ -15,4 +15,7 @@ public class Constants {
     public static final String USERNAME = "username";
     public static final String BROWSER = "browser";
     public static final String CART_QUANTITY_TEST = "2 Products";
+    public static final String SCREENSHOTS_FOLDER = "screenshots\\";
+    public static final int SCREENSHOT_NAME_LENGTH = 4;
+    public static final String SCREENSHOT_EXTENSION = ".png";
 }

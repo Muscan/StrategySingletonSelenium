@@ -9,12 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Constants;
+import utils.Utils;
 
 
 public class HomePage {
     private WebDriver driver;
 
-    public HomePage(){
+    public HomePage() {
         driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
     }
@@ -46,30 +47,55 @@ public class HomePage {
     @FindBy(css = "#header > div.nav > div > div > nav > div:nth-child(1) > a > span")
     private WebElement username;
 
-    public void clickSignIn(){
+    @FindBy(id = "search_query_top")
+    private WebElement searchBar;
+
+    @FindBy(css = "#searchbox > button")
+    private WebElement searchButton;
+
+    @FindBy(css = "#center_column > ul > li > div > div.left-block > div > a.product_img_link > img")
+    private WebElement searchResults;
+
+    public Boolean searchElement(String searchStr){
+        searchBar.sendKeys(searchStr);
+        searchButton.click();
+        try {
+            if(searchResults.isEnabled())
+                return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+        return false;
+    }
+
+    public void clickSignIn() {
         WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
         wait.until(ExpectedConditions.elementToBeClickable(signInButton));
         signInButton.click();
     }
 
-    public String getUserName(){
+    public String getUserName() {
         return username.getText();
     }
 
-    public void addFirstElementToCart(){
+    public void addFirstElementToCart() {
         Actions hover = new Actions(driver);
         hover.moveToElement(firstElement).build().perform();
         addToCartFirst.click();
         WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
         continueShoppingButton.click();
-        if(cart.getText().contains(Constants.CART_QUANTITY))
+        if (cart.getText().contains(Constants.CART_QUANTITY))
             System.out.println("Cart has been updated");
-        else
+        else {
             System.out.println("Cart has not been updated");
+            Utils.takeScreenshot();
+        }
+
     }
 
-    public void addSecondElementToCart(){
+    public void addSecondElementToCart() {
         Actions hover = new Actions(driver);
         hover.moveToElement(secondElement).build().perform();
         addToCartSecond.click();
@@ -78,3 +104,5 @@ public class HomePage {
         proceedToCheckoutButton.click();
     }
 }
+
+
