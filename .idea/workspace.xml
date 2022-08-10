@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0feb63c-5c95-4a53-ba5d-7436b31451d6" name="Changes" comment="Changes" />
+    <list default="true" id="e0feb63c-5c95-4a53-ba5d-7436b31451d6" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/automation-framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/automation-framework/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/automation-framework" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
